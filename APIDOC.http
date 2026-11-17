@@ -1,0 +1,31 @@
+# ==== ACCOUNT APPLICATION ====
+
+# Trainer Register
+###
+POST http://127.0.0.1:8000/account/trainer/register/ 
+Content-Type: application/json
+
+{
+    "username":"Sajulal",
+    "email":"saju@gmail.com",
+    "password":"saju@123",
+    "phone":"9876786776"
+}
+
+# Trainer Token Genrating
+
+
+#Student Register
+###
+POST http://127.0.0.1:8000/account/student/register/ 
+Content-Type: application/json
+
+{
+    "username":"zain",
+    "email":"zain@gmail.com",
+    "password":"zain@123",
+    "phone":"6876786776"
+}
+
+# Student JWT Genrating
+
