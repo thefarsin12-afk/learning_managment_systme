@@ -22,7 +22,7 @@ Content-Type: application/json
     "password":"saju@123"
 }
 
-#Student Register
+# Student Register
 ###
 POST http://127.0.0.1:8000/account/student/register/ 
 Content-Type: application/json
@@ -35,6 +35,8 @@ Content-Type: application/json
 }
 
 # Student JWT Genrating 
+
+#access token genrating
 ###
 POST http://127.0.0.1:8000/account/student/jwt/loggin/
 Content-Type: application/json
@@ -44,6 +46,7 @@ Content-Type: application/json
     "password":"zain@123"
 }
 
+#refresh Token generating
 ###
 POST http://127.0.0.1:8000/account/student/jwt/refresh/loggin/
 Content-Type: application/json
@@ -51,3 +54,4 @@ Content-Type: application/json
 {
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTA4MzY0MSwiaWF0IjoxNzk0OTk3MjQxLCJqdGkiOiIxODVhYjZkNTc0NDA0YjY2OGJjNjk1ZWJlNmEzYjRjNyIsInVzZXJfaWQiOiIyIn0.vTBWKCoAsXyqdHskO9Lp8wsEmFmRT6OfQS7bPMv-Q3Y"
 }
+
