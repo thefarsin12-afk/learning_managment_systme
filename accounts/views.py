@@ -1,10 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import authentication
 
 from accounts.serializers import UserSerializer
 from accounts.models import User
+from accounts.permission import IsOwner
+from accounts.models import TrainerProfile
+from accounts.serializers import TrainerProfileSerializer
 
 class CreateAdminView(APIView):
 
@@ -44,4 +48,47 @@ class CreateSudentView(APIView):
 
             return Response(data=serialzier.data)
 
-        return Response(data=serialzier.errors)    
+        return Response(data=serialzier.errors)  
+
+class TrainerProfileUpdateView(APIView):
+
+    authentication_classes = [authentication.TokenAuthentication]
+
+    permission_classes = [IsOwner]
+
+    def put(self,request):
+
+        form_data = request.data
+
+        trainer_object = TrainerProfile.objects.get(trainer=request.user)
+
+        serializer = TrainerProfileSerializer(data=form_data,instance=trainer_object)
+
+        if serializer.is_valid():
+
+            serializer.save()
+
+            return Response(data=serializer.data)
+
+        else:return Response(data=serializer.errors)
+
+class GetMeTrainerProfileView(APIView):
+
+    authentication_classes = [authentication.TokenAuthentication] 
+
+    permission_classes = [IsOwner]
+
+    def get(self,request):
+
+        trainer = request.user
+
+        instance = get_object_or_404(TrainerProfile,trainer=trainer)
+
+        serializer = TrainerProfileSerializer(instance)
+
+        return Response(data=serializer.data)
+
+    
+
+
+

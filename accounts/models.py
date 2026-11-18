@@ -1,9 +1,8 @@
 from django.db import models
-
 from django.db import models
-
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
+from django.core.mail import send_mail
 
 class User(AbstractUser):
 
@@ -83,4 +82,26 @@ def create_profile(sender,instance,created,*args,**kwargs):
 
             StudentProfile.objects.create(student=instance)
 
-post_save.connect(create_profile,sender=User)                
+post_save.connect(create_profile,sender=User)    
+
+def account_send_mail(sender,instance,created,*args,**kwargs):
+
+    if created and instance.role == "trainer":
+
+        send_mail(
+            "Account creating conferamtion",
+            "Trainer...You are created account👍",
+            "thefarsin12@gmail.com",
+            ["trock2919@gmail.com"],
+    )
+
+    elif created and instance.role == "student":
+
+        send_mail(
+            "Account creating conferamtion",
+            "Student You are created account 👌.",
+            "thefarsin12@gmail.com",
+            ["farsinsworldshow12@gmail.com"],
+    )
+
+post_save.connect(account_send_mail,sender=User)        

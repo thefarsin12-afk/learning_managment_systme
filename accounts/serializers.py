@@ -35,4 +35,4 @@ class StudentProfileSerailizer(serializers.ModelSerializer):
 
         fields = "__all__"
 
-        read_only_fileds = ["id","student"]       
+        read_only_fields = ["id","student"]       

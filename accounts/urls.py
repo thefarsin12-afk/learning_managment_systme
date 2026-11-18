@@ -1,6 +1,9 @@
 from django.urls import path
+
 from accounts.views import CreateAdminView
 from accounts.views import CreateSudentView
+from accounts.views import TrainerProfileUpdateView
+from accounts.views import GetMeTrainerProfileView
 
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
@@ -12,6 +15,12 @@ urlpatterns = [
 
     # trainer token genareting
     path('trainer/loggin/',ObtainAuthToken.as_view()),
+
+    #trainer profile update
+    path('trainer/profile/',TrainerProfileUpdateView.as_view()),
+
+    # trainer profile view
+    path('trainer/profile/view/',GetMeTrainerProfileView.as_view()),
 
     # student registraion
     path('student/register/',CreateSudentView.as_view()),
