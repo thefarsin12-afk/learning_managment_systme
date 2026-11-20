@@ -18,8 +18,8 @@ POST http://127.0.0.1:8000/account/trainer/loggin/
 Content-Type: application/json
 
 {
-    "username":"rockson-khan",
-    "password":"rock@123"
+    "username":"Sajulal",
+    "password":"saju@123"
 }
 
 # trainer profile update api
@@ -78,3 +78,54 @@ Content-Type: application/json
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTA4MzY0MSwiaWF0IjoxNzk0OTk3MjQxLCJqdGkiOiIxODVhYjZkNTc0NDA0YjY2OGJjNjk1ZWJlNmEzYjRjNyIsInVzZXJfaWQiOiIyIn0.vTBWKCoAsXyqdHskO9Lp8wsEmFmRT6OfQS7bPMv-Q3Y"
 }
 
+# COURSE APPLICATION API
+
+#api for list all courses
+###
+GET http://127.0.0.1:8000/course/courses/
+Accept: application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+#api for add to course
+###
+POST http://127.0.0.1:8000/course/courses/
+Content-Type:  application/json
+Authorization: Token f3b9013d86f89ad4b08d0a5c10710f1247e0d821
+
+{
+    "title": "Audio Production & Scriptwriting",
+    "language": "Malayalam, English",
+    "description": "Learn professional audio recording, voice-over techniques, sound editing, podcast production, storytelling and creative scriptwriting for films, documentaries and digital media.",
+    "duration": "3 Months",
+    "price": "18000"
+}
+
+#api for retrieve course
+###
+GET http://127.0.0.1:8000/course/courses/2/
+Accept: application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+#api for update course
+###
+PUT http://127.0.0.1:8000/course/courses/2/
+Content-Type:application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+{
+  "id": 1,
+  "title": "Full Stack Development",
+  "language": "Python, Django,Mysql,React.js",
+  "description": "Complete Full Stack Development course covering frontend, backend, database management and REST API development.",
+  "duration": "6 Months",
+  "price": "32000",
+  "created_at": "2026-11-20T11:21:30.847845Z",
+  "updated_at": "2026-11-20T11:21:30.847895Z",
+  "trainer": 3
+}
+
+#api for delete course
+###
+DELETE http://127.0.0.1:8000/course/courses/2/
+Accept: application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
