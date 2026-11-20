@@ -1,4 +1,4 @@
-# ==== ACCOUNT APPLICATION ====
+# ==== ACCOUNT APPLICATION API ====
 
 # Trainer Register
 ###
@@ -78,7 +78,7 @@ Content-Type: application/json
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTA4MzY0MSwiaWF0IjoxNzk0OTk3MjQxLCJqdGkiOiIxODVhYjZkNTc0NDA0YjY2OGJjNjk1ZWJlNmEzYjRjNyIsInVzZXJfaWQiOiIyIn0.vTBWKCoAsXyqdHskO9Lp8wsEmFmRT6OfQS7bPMv-Q3Y"
 }
 
-# COURSE APPLICATION API
+# ===== COURSE APPLICATION API =====
 
 #api for list all courses
 ###
