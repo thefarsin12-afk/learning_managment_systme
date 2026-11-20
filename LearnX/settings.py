@@ -158,3 +158,7 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 # # accepting all port request
 # CORS_ALLOW_ALL_ORIGINS = True
+
+AUTHENTICATION_BACKENDS  = ["django.contrib.auth.backends.ModelBackend",
+                           "accounts.backends.EmailBackend",
+                           "accounts.backends.PhoneBackend",]

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from accounts.views import CreateAdminView
+from accounts.views import CreateTrainerView
 from accounts.views import CreateSudentView
 from accounts.views import TrainerProfileUpdateView
 from accounts.views import GetMeTrainerProfileView
@@ -11,7 +11,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 urlpatterns = [
 
     # trainer registraion
-    path('trainer/register/',CreateAdminView.as_view()),
+    path('trainer/register/',CreateTrainerView.as_view()),
 
     # trainer token genareting
     path('trainer/loggin/',ObtainAuthToken.as_view()),

@@ -10,7 +10,7 @@ from accounts.permission import IsOwner
 from accounts.models import TrainerProfile
 from accounts.serializers import TrainerProfileSerializer
 
-class CreateAdminView(APIView):
+class CreateTrainerView(APIView):
 
     def post(self,request):
 
