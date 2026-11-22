@@ -18,23 +18,24 @@ POST http://127.0.0.1:8000/account/trainer/loggin/
 Content-Type: application/json
 
 {
-    "username":"rockson-khan",
-    "password":"rock@123"
+    "username":"2714064426",
+    "password":"ahamed@123"
 }
 
 # trainer profile update api
 ###
 PUT http://127.0.0.1:8000/account/trainer/profile/
 Content-Type: application/json
-Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
 
 {
-    "date_of_birth": "1998-05-12",
-    "bio": "Full Stack Development trainer specializing in Python, Django, REST APIs, MySQL, and React.js.",
+    "date_of_birth": "1998-05-15",
+    "bio": "Experienced full stack developer and passionate programming instructor.",
     "gender": "male",
     "profile_picture": null,
+    "trainer": 1,
     "department": "Full Stack Development",
-    "qualification": "MSc Computer Science",
+    "qualification": "MCA",
     "linkedin_url": "https://www.linkedin.com/in/rockson-khan",
     "github_url": "https://github.com/rockson-khan"
 }
@@ -43,7 +44,7 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 ###
 GET http://127.0.0.1:8000/account/trainer/profile/view/
 Accept: application/json
-Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
 
 # Student Register
 ###
@@ -90,14 +91,15 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 ###
 POST http://127.0.0.1:8000/course/courses/
 Content-Type:  application/json
-Authorization: Token f3b9013d86f89ad4b08d0a5c10710f1247e0d821
+Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
 
 {
-    "title": "Audio Production & Scriptwriting",
-    "language": "Malayalam, English",
-    "description": "Learn professional audio recording, voice-over techniques, sound editing, podcast production, storytelling and creative scriptwriting for films, documentaries and digital media.",
-    "duration": "3 Months",
-    "price": "18000"
+    "title": "Python Django Full Stack Development",
+    "language": "Python",
+    "description": "Learn Python, Django, Django REST Framework, MySQL and API development.",
+    "trainer": 1,
+    "duration": "6 Months",
+    "price": "25000"
 }
 
 #api for retrieve course
