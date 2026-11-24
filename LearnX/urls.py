@@ -23,4 +23,6 @@ urlpatterns = [
     path('account/',include('accounts.urls')),
 
     path('course/',include('course.urls')),
+
+    path('modules/',include('module.urls')),
 ]
