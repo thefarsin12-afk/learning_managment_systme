@@ -4,7 +4,7 @@ from module.views import  ModuleCreateView
 
 urlpatterns = [
 
-    path('unit/',ModuleCreateView.as_view()),
+    path('<int:pk>/unit/',ModuleCreateView.as_view()),
 
     
 ]

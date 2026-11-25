@@ -19,7 +19,7 @@ class ModuleCreateView(APIView):
 
         course_id = pk
 
-        course_object = Course.objects.get(course=course_id)
+        course_object = Course.objects.get(id=course_id)
 
         form_data = request.data
 

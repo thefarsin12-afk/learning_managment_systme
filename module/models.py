@@ -16,9 +16,24 @@ class Module(models.Model):
 
     topics = models.TextField()
 
+    module_number = models.PositiveIntegerField(null=True,blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
+
+    def save(self,*args,**kwargs):
+
+        last_object = Module.objects.filter(course=self.course).last()
+
+        if last_object:
+
+            self.module_number = last_object.module_number + 1
+
+        else:
+            self.module_number = 1
+
+            return super().save(*args,**kwargs)            

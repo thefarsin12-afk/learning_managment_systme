@@ -10,4 +10,4 @@ class ModuleSerializer(serializers.ModelSerializer):
 
         fields = "__all__"
 
-        read_only_fields = ["id","course","trainer","created_at","updated_at"]
+        read_only_fields = ["id","course","trainer","created_at","updated_at","module_number"]

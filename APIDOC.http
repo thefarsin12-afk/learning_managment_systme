@@ -104,9 +104,9 @@ Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
 
 #api for retrieve course
 ###
-GET http://127.0.0.1:8000/course/courses/2/
+GET http://127.0.0.1:8000/course/courses/3/
 Accept: application/json
-Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
 
 #api for update course
 ###
@@ -131,3 +131,19 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 DELETE http://127.0.0.1:8000/course/courses/2/
 Accept: application/json
 Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+
+# ===== MODULE APPLICATION API =====
+
+#api for add module
+###
+POST http://127.0.0.1:8000/modules/3/unit/
+Content-Type: application/json
+Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
+
+{
+    "title": "Python Fundamentals",
+    "description": "Learn the basics of Python programming.",
+    "topics": "Introduction to Python, Variables, Data Types, Operators, Conditional Statements, Loops"
+}
+
