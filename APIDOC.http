@@ -18,8 +18,8 @@ POST http://127.0.0.1:8000/account/trainer/loggin/
 Content-Type: application/json
 
 {
-    "username":"2714064426",
-    "password":"ahamed@123"
+    "username":"rockson-khan",
+    "password":"rock@123"
 }
 
 # trainer profile update api
@@ -91,7 +91,7 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 ###
 POST http://127.0.0.1:8000/course/courses/
 Content-Type:  application/json
-Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
+Authorization: Token 4d8ab868a7804a18ae13e0e977c2ccc1c5d652e0
 
 {
     "title": "Python Django Full Stack Development",
@@ -104,9 +104,9 @@ Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
 
 #api for retrieve course
 ###
-GET http://127.0.0.1:8000/course/courses/3/
+GET http://127.0.0.1:8000/course/courses/5/
 Accept: application/json
-Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
+Authorization: Token 4d8ab868a7804a18ae13e0e977c2ccc1c5d652e0
 
 #api for update course
 ###
@@ -137,12 +137,12 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
 #api for add module
 ###
-POST http://127.0.0.1:8000/modules/3/unit/
+POST http://127.0.0.1:8000/modules/5/unit/
 Content-Type: application/json
-Authorization: Token 6f524db031bf6997504821be00dec89540e13b07
+Authorization: Token 4d8ab868a7804a18ae13e0e977c2ccc1c5d652e0
 
 {
-    "title": "Python Fundamentals",
+    "title": "Python Fundamenta",
     "description": "Learn the basics of Python programming.",
     "topics": "Introduction to Python, Variables, Data Types, Operators, Conditional Statements, Loops"
 }

@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import authentication,permissions
+from rest_framework import authentication
 
-from module.models import Module
+from module.permission import IsCourseTrainer
 from module.serializers import ModuleSerializer
 
 from course.models import Course
@@ -13,13 +13,15 @@ class ModuleCreateView(APIView):
 
     authentication_classes = [authentication.TokenAuthentication]
 
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [IsCourseTrainer]
 
     def post(self,request,pk=None):
 
         course_id = pk
 
-        course_object = Course.objects.get(id=course_id)
+        course_object = get_object_or_404(Course,id=course_id)
+
+        self.check_object_permissions(request,course_object)
 
         form_data = request.data
 
