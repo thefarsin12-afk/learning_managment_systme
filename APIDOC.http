@@ -148,13 +148,13 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 }
 
 
-#api for add retrieve
+#api for retrieve
 ###
 GET  http://127.0.0.1:8000/modules/unit/5/
 Accept:application/json
 Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
-#api for add update
+#api for update
 ###
 PUT http://127.0.0.1:8000/modules/unit/6/
 Content-Type:application/json
@@ -172,7 +172,7 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
   "trainer": 3
 }
 
-#api for add retrieve
+#api for delete
 ###
 DELETE http://127.0.0.1:8000/modules/unit/5/
 Accept:application/json
