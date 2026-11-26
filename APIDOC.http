@@ -104,9 +104,9 @@ Authorization: Token 4d8ab868a7804a18ae13e0e977c2ccc1c5d652e0
 
 #api for retrieve course
 ###
-GET http://127.0.0.1:8000/course/courses/5/
+GET http://127.0.0.1:8000/course/courses/1/
 Accept: application/json
-Authorization: Token 4d8ab868a7804a18ae13e0e977c2ccc1c5d652e0
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
 #api for update course
 ###
@@ -137,13 +137,43 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
 #api for add module
 ###
-POST http://127.0.0.1:8000/modules/5/unit/
+POST http://127.0.0.1:8000/modules/1/unit/
 Content-Type: application/json
-Authorization: Token 4d8ab868a7804a18ae13e0e977c2ccc1c5d652e0
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
 {
-    "title": "Python Fundamenta",
+    "title": "Django Fundamenta",
     "description": "Learn the basics of Python programming.",
     "topics": "Introduction to Python, Variables, Data Types, Operators, Conditional Statements, Loops"
 }
 
+
+#api for add retrieve
+###
+GET  http://127.0.0.1:8000/modules/unit/5/
+Accept:application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+#api for add update
+###
+PUT http://127.0.0.1:8000/modules/unit/6/
+Content-Type:application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+{
+  "id": 5,
+  "title": "Django Fundamenta",
+  "description": "Learn the basics of Python programming.",
+  "topics": "Introduction to Python, Variables, Data Types, Operators, Conditional Statements, Loops",
+  "module_number": 2,
+  "created_at": "2026-11-26T07:03:09.809701Z",
+  "updated_at": "2026-11-26T07:03:09.809749Z",
+  "course": 1,
+  "trainer": 3
+}
+
+#api for add retrieve
+###
+DELETE http://127.0.0.1:8000/modules/unit/5/
+Accept:application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
