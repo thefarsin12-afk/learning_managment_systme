@@ -137,7 +137,7 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
 #api for add module
 ###
-POST http://127.0.0.1:8000/modules/1/unit/
+POST http://127.0.0.1:8000/modules/4/unit/
 Content-Type: application/json
 Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
