@@ -6,10 +6,10 @@ POST http://127.0.0.1:8000/account/trainer/register/
 Content-Type: application/json
 
 {
-    "username":"ahamaed",
+    "username":"sanjay",
     "email":"thefarsin12@gmail.com",
-    "password":"ahamed@123",
-    "phone":"2714064426"
+    "password":"sajay@123",
+    "phone":"1714064426"
 }
 
 # Trainer Token Genrating
@@ -18,8 +18,8 @@ POST http://127.0.0.1:8000/account/trainer/loggin/
 Content-Type: application/json
 
 {
-    "username":"rockson-khan",
-    "password":"rock@123"
+    "username":"1714064426",
+    "password":"sajay@123"
 }
 
 # trainer profile update api
@@ -91,10 +91,10 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 ###
 POST http://127.0.0.1:8000/course/courses/
 Content-Type:  application/json
-Authorization: Token 4d8ab868a7804a18ae13e0e977c2ccc1c5d652e0
+Authorization: Token 6956bccee59c84c3f43b237e7d79850132a1e7af
 
 {
-    "title": "Python Django Full Stack Development",
+    "title": " Full Stack Development",
     "language": "Python",
     "description": "Learn Python, Django, Django REST Framework, MySQL and API development.",
     "trainer": 1,
@@ -137,9 +137,9 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 
 #api for add module
 ###
-POST http://127.0.0.1:8000/modules/4/unit/
+POST http://127.0.0.1:8000/modules/6/unit/
 Content-Type: application/json
-Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+Authorization: Token 6956bccee59c84c3f43b237e7d79850132a1e7af
 
 {
     "title": "Django Fundamenta",
@@ -176,4 +176,52 @@ Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
 ###
 DELETE http://127.0.0.1:8000/modules/unit/5/
 Accept:application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+
+
+# ===== LESSON APPLICATION =====
+
+# api for add lesson
+###
+POST http://127.0.0.1:8000/lessons/7/chapter/
+Content-Type: application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+{
+    "title": "Introduction to Python",
+    "description": "Learn the basics of Python programming.",
+    "video_url": "https://www.youtube.com/watch?v=example",
+    "duration": "25 minutes"
+}
+
+# api for retrieve
+###
+GET http://127.0.0.1:8000/lessons/chapter/7/
+Accept: application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+# api for update
+###
+PUT  http://127.0.0.1:8000/lessons/chapter/7/
+Content-Type:application/json
+Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7
+
+{
+  "id": 7,
+  "title": "Introduction to PYthon",
+  "description": "Learn the basics of Python programming.",
+  "video_url": "https://www.youtube.com/watch?v=example",
+  "duration": "25 minutes",
+  "lesson_number": 1,
+  "created_at": "2026-11-26T16:17:31.965276Z",
+  "updated_at": "2026-11-26T16:17:31.965304Z",
+  "module": 7,
+  "created_by": 3
+}
+
+# api for delete
+###
+DELETE http://127.0.0.1:8000/lessons/chapter/7/
+Accept: application/json
 Authorization: Token aee60a8fd36e49277dad070f598daaa27823e1c7

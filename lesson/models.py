@@ -12,11 +12,13 @@ class Lessons(models.Model):
 
     module = models.ForeignKey(Module,on_delete=models.CASCADE)
 
-    trainer = models.ForeignKey(User,on_delete=models.CASCADE)
-
     video_url = models.URLField(null=True,blank=True)
 
     duration = models.CharField(max_length=50,null=True,blank=True)
+
+    lesson_number = models.PositiveIntegerField()
+
+    created_by = models.ForeignKey(User,on_delete=models.CASCADE)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -25,4 +27,17 @@ class Lessons(models.Model):
     def __str__(self):
 
         return self.title
+
+    def save(self,*args,**kwargs):
+
+        last_object = Lessons.objects.filter(module=self.module).last()
+
+        if last_object:
+
+            self.lesson_number = last_object.lesson_number + 1
+
+        else:
+            self.lesson_number = 1
+
+        return super().save(*args,**kwargs)
 
