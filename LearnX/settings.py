@@ -43,11 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'rest_framework.authtoken',
     'accounts',
     'rest_framework_simplejwt',
     'course',
     'module',
+    'lesson',
 ]
 
 MIDDLEWARE = [
@@ -157,9 +159,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'thefarsin12@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
-# # accepting all port request
-# CORS_ALLOW_ALL_ORIGINS = True
-
 AUTHENTICATION_BACKENDS  = ["django.contrib.auth.backends.ModelBackend",
                            "accounts.backends.EmailBackend",
                            "accounts.backends.PhoneBackend",]
@@ -174,3 +173,5 @@ AUTHENTICATION_BACKENDS  = ["django.contrib.auth.backends.ModelBackend",
 #         'user': '3/minute'
 #     }
 # }
+
+# CORS_ALLOW_ALL_ORIGINS = True
