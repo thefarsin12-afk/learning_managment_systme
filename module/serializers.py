@@ -2,7 +2,13 @@ from rest_framework import serializers
 
 from module.models import Module
 
+from lesson.models import Lessons
+
 class ModuleSerializer(serializers.ModelSerializer):
+
+    lesson = serializers.SerializerMethodField(read_only=True)
+
+    lesson_count = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
 
@@ -22,3 +28,10 @@ class ModuleSerializer(serializers.ModelSerializer):
     #         raise serializers.ValidationError('Course not exist')
 
     #     return validate_data    
+
+    # def get_lesson(self,obj):
+
+    #     lesson_object = Lessons.objects.filter(module=obj)
+
+
+

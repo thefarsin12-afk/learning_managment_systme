@@ -11,6 +11,8 @@ class CourseSerializer(serializers.ModelSerializer):
 
     total_module = serializers.SerializerMethodField(read_only=True)
 
+    
+
     class Meta:
 
         model = Course
